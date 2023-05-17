@@ -1,23 +1,21 @@
 package ppark.springppark.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
-@Data
+@Getter @Setter
 @Table(name = "member")
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+//@Builder
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class Member {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String userId;
 

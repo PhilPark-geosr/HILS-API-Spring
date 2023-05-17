@@ -1,0 +1,28 @@
+server:
+  port : 6129
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  datasource:
+    maximum-pool-size: 4
+    url:  jdbc:postgresql://localhost:5432/spring-test
+    username: postgres
+    password: all48088!!
+    driver-class-name: org.postgresql.Driver
+  # application 시작시 테이블 생성 자동으로하고, 종료시 다 없애준다
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        ##entity를 camelCase로 작성시 db에는 snake_case로 컬럼명이 들어가게 되는데 이걸 막기위함.
+    properties:
+      hibernate:
+#        show_sql: true #sql 문 보여준다
+        format_sql: true
+logging:
+  level:
+    org.hibernate.SQL: debug #logger를 통해서 sql문 찍어야 한다 , 위에 show_sql은 sout을 통해서 출력하는 것이다.
+    org.hibernate.orm.jdbc.bind: trace # binding parameter를 보여준다
