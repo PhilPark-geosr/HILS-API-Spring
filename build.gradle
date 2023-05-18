@@ -22,6 +22,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // jpa 관련 라이브러리
 	implementation group: 'org.postgresql', name:'postgresql', version: '42.2.19' // postgresql 의존성
+	// hibernate-spatial
+	implementation 'org.hibernate:hibernate-spatial:5.6.11.Final'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
