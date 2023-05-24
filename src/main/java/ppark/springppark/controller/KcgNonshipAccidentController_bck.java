@@ -1,26 +1,17 @@
 package ppark.springppark.controller;
 
 import com.bedatadriven.jackson.datatype.jts.JtsModule;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import lombok.SneakyThrows;
-import org.locationtech.jts.io.WKBReader;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Base64Utils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ppark.springppark.domain.KcgNonshipAccident;
-import ppark.springppark.repository.KcgNonshipAccidentRepository;
-import org.locationtech.jts.geom.Geometry;
+import ppark.springppark.repository.JpaKcgNonshipAccidentRepository;
 import org.locationtech.jts.io.WKBWriter;
 
-import java.util.Base64;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 //@RestController
@@ -44,13 +35,14 @@ import java.util.stream.Collectors;
 //        return all;
 //    }
 //}
+//    @GetMapping
 @RestController
 @RequestMapping("/api/geo-entities")
-public class KcgNonshipAccidentController {
-    private final KcgNonshipAccidentRepository geoEntityRepository;
+public class KcgNonshipAccidentController_bck {
+    private final JpaKcgNonshipAccidentRepository geoEntityRepository;
     private final ObjectMapper objectMapper;
 
-    public KcgNonshipAccidentController(KcgNonshipAccidentRepository geoEntityRepository, ObjectMapper objectMapper) {
+    public KcgNonshipAccidentController_bck(JpaKcgNonshipAccidentRepository geoEntityRepository, ObjectMapper objectMapper) {
         this.geoEntityRepository = geoEntityRepository;
         this.objectMapper = objectMapper.registerModule(new JtsModule());
     }
@@ -69,7 +61,6 @@ public class KcgNonshipAccidentController {
                 .collect(Collectors.toList());
     }
 }
-//    @GetMapping
 //    public List<Geometry> getAllGeoEntitiesAsGeometry() {
 //        List<KcgNonshipAccident> geoEntities = geoEntityRepository.findAll();
 //        WKBReader wkbReader = new WKBReader();

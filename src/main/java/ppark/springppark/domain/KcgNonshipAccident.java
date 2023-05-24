@@ -3,10 +3,6 @@ package ppark.springppark.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.Point;
-import ppark.springppark.converter.PointConverter;
 
 
 @Getter

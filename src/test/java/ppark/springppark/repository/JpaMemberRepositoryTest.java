@@ -12,6 +12,7 @@ import ppark.springppark.domain.Member;
 @SpringBootTest
 class JpaMemberRepositoryTest {
     @Autowired //먼저 injection 받고 시작하자!!
+
     JpaMemberRepository memberRepository;
 
     @Test
