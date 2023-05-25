@@ -1,5 +1,5 @@
 server:
-  port : 6129
+  port : 8000
 
 spring:
   devtools:
@@ -7,7 +7,7 @@ spring:
       enabled: true
   datasource:
     maximum-pool-size: 4
-    url:  jdbc:postgresql://localhost:5432/hils2
+    url:  jdbc:postgresql://192.168.1.34:5432/hils2
     username: postgres
     password: all48088!!
     driver-class-name: org.postgresql.Driver

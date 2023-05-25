@@ -36,6 +36,7 @@ import java.util.stream.Collectors;
 //    }
 //}
 //    @GetMapping
+
 @RestController
 @RequestMapping("/api/geo-entities")
 public class KcgNonshipAccidentController_bck {

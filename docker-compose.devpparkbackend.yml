@@ -25,19 +25,18 @@ services:
   ###########################
   backend:
     build:
-      context: ./backend_ppark
-      dockerfile: Dockerfile
-    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-    volumes:
-      # hostPath:containerPath:mode
-      - ./backend_ppark:/backend:consistent
+      context: .
+      dockerfile: ./Dockerfile
+#    volumes:
+#      # hostPath:containerPath:mode
+#      - ./backend_ppark:/backend:consistent
     # env_file:
     #   - ./backend_ppark/.env
     labels:
       # explicitly tell Traefik to expose this container
       - 'traefik.enable=true'
       # specify the rule used to match a request to this service
-      - 'traefik.http.routers.backend3.rule=Host(`hilsvis_ppark_backend.localhost`) && PathPrefix(`/api`)'
+      - 'traefik.http.routers.backend3.rule=Host(`hilsvispparkbackend.localhost`) && PathPrefix(`/api`)'
       # allow request only from the predefined entry point named "web"
       - 'traefik.http.routers.backend3.entrypoints=web'
       # set port the container listens to
